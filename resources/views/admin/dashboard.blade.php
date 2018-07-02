@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <p>
-                    <a href="" class="btn  btn-lg btn-primary">Создать категорию</a>
+                    <a href="{{route('admin.category.create')}}" class="btn  btn-lg btn-primary">Создать категорию</a>
                 </p>
                 <a href="" class="list-group-item">
                     <h4 class="list-group-item list-group-item-light">Категория первая</h4>
