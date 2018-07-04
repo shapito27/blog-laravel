@@ -3,9 +3,9 @@
     @if(isset($category->id))
         <!-- update -->
             <option value="0"
-            @if($caegory->published == 0) selected @endif>Не опубликовано</option>
+            @if($category->published == 0) selected @endif>Не опубликовано</option>
             <option value="1"
-            @if($caegory->published == 1) selected @endif>Опубликовано</option>
+            @if($category->published == 1) selected @endif>Опубликовано</option>
         @else
         <!-- create -->
             <option value="0">Не опубликовано</option>
