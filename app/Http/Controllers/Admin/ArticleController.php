@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.articles.index', ['articles' => Article::orderBy('created_at', 'desc')->paginate()]);
     }
 
     /**
