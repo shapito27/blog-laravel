@@ -8,8 +8,9 @@
         @slot('active')Создание@endslot
         @endcomponent
         <hr>
-        <form action="{{route('admin.article.store')}}" method="post" class="form-horizontal">
+        <form action="{{route('admin.article.store')}}" method="post" class="form-horizontal text-left">
             {{csrf_field()}}
+            <input type="hidden" name="created_by" value="{{Auth::id()}}">
         @include('admin.article.partials.form')
         </form>
 </div>

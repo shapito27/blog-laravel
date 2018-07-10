@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Article;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('admin.articles.index', ['articles' => Article::orderBy('created_at', 'desc')->paginate()]);
+        return view('admin.article.index', ['article' => Article::orderBy('created_at', 'desc')->paginate()]);
     }
 
     /**
@@ -25,7 +26,12 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.article.create',
+            [
+                'article' => [],
+                'categories' => Category::with('children')->where('parent_id', null)->get(),
+                'delimetr' => '',
+            ]);
     }
 
     /**
