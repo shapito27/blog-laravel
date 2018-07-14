@@ -50,7 +50,7 @@
             </div>
             <div class="col-sm-6">
                 <p>
-                    <a href="" class="btn btn-lg btn-primary">Создать материал</a>
+                    <a href="{{route('admin.article.index')}}" class="btn btn-lg btn-primary">Создать материал</a>
                 </p>
                 <a href="" class="list-group-item">
                     <h4 class="list-group-item list-group-item-light">Материал первый</h4>

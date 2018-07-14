@@ -20,7 +20,7 @@ class CreateArticlesTable extends Migration
             $table->text('preview_text')->nullable();
             $table->text('detail_text')->nullable();
             $table->string('image')->nullable();
-            $table->boolean('show_image');
+            $table->boolean('show_image')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();

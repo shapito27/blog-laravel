@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @component('admin.components.breacrumb')
-            @slot('title')Редактировать категорию@endslot
+            @slot('title')Редактировать статью@endslot
             @slot('parent')Главная@endslot
             @slot('active')Редактирование@endslot
         @endcomponent
@@ -12,6 +12,7 @@
             <input type="hidden" name="_method" value="put">
             {{csrf_field()}}
             @include('admin.article.partials.form')
+            <input type="hidden" name="modified_by" value="{{Auth::id()}}">
         </form>
     </div>
 @endsection

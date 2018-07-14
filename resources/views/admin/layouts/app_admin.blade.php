@@ -10,9 +10,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -27,7 +24,9 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -35,7 +34,8 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown"  aria-haspopup="true" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" aria-haspopup="true"
+                           data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
                         <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a>
                             <a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a>
@@ -55,7 +55,8 @@
                         </li>
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
@@ -66,7 +67,8 @@
                                     {{ __('Logout') }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
                                     @csrf
                                 </form>
                             </div>
@@ -83,5 +85,10 @@
         </div>
     </main>
 </div>
+{{--<script src="{{asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>--}}
+<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+@stack('scripts')
 </body>
 </html>

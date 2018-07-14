@@ -1,4 +1,11 @@
+<label for="">Наименование</label>
+<input type="text" class="form-control" name="title" placeholder="Name of category" value="{{$article->title or ""}}" required>
+
+
+<label for="">Slug</label>
+<input type="text" class="form-control" name="slug" value="{{$article->slug or ""}}" readonly placeholder="Auto generation">
 <label for="published">Статус</label>
+
 <select name="published" id="published" class="form-control">
     @if(isset($article->id))
         <!-- update -->
@@ -13,15 +20,9 @@
     @endif
 </select>
 
-<label for="">Наименование</label>
-<input type="text" class="form-control" name="title" placeholder="Name of category" value="{{$article->title or ""}}" required>
 
 
-<label for="">Slug</label>
-<input type="text" class="form-control" name="slug" value="{{$article->slug or ""}}" readonly placeholder="Auto generation">
-
-
-<label for="">Parent categories</label>
+<label for="">Категории</label>
 <select type="text" class="form-control" name="categories[]" multiple="">
     @include('admin.article.partials.categories')
 </select>
@@ -30,17 +31,23 @@
 <textarea name="preview_text" id="" cols="30" rows="5" class="form-control" placeholder="preview text">{{$article->preview_text or ""}}</textarea>
 
 <label for="">Детальный текст</label>
-<textarea name="detail_text" id="" cols="30" rows="10" class="form-control" placeholder="detail text">{{$article->detail_text or ""}}</textarea>
+<textarea name="detail_text" id="detail_text" cols="30" rows="10" class="form-control" placeholder="detail text">{{$article->detail_text or ""}}</textarea>
 
 
 <div class="form-group">
 <label for="image">Картинка</label>
-<input type="file" class="form-control-file" name="image" placeholder="" value="{{$article->image or ""}}" required>
+<input type="file" class="form-control-file" name="image" placeholder="" value="{{$article->image or ""}}">
 </div>
 
 <div class="form-check">
     <input type="checkbox" class="form-check-input position-static" id="show_image" name="show_image"
-           placeholder="Name of category" value="{{$article->show_image or ""}}" required>
+           placeholder="Name of category" value="1"
+           @if(isset($article->show_image))
+                @if($article->show_image == 1)
+                     checked
+                @endif
+           @endif
+    >
     <label for="show_image">Показывать картинку</label>
 </div>
 
@@ -54,7 +61,7 @@
 
 
 <label for="">Keywords</label>
-<input type="text" class="form-control" name="meta_keywords" placeholder="" value="{{$article->meta_keywords or ""}}" required>
+<input type="text" class="form-control" name="meta_keywords" placeholder="" value="{{$article->meta_keywords or ""}}">
 </div>
 
 <hr>

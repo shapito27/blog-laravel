@@ -14,4 +14,7 @@
         @include('admin.article.partials.form')
         </form>
 </div>
+    @push('scripts')
+        <script src="{{asset('js/article/create.js')}}"></script>
+    @endpush
 @endsection
