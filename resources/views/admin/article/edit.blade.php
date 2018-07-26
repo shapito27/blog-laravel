@@ -15,4 +15,7 @@
             <input type="hidden" name="modified_by" value="{{Auth::id()}}">
         </form>
     </div>
+    @push('scripts')
+        <script src="{{asset('js/article/create.js')}}"></script>
+    @endpush
 @endsection

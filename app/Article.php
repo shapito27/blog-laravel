@@ -44,4 +44,14 @@ class Article extends Model
     {
         return $this->morphToMany('App\Category', 'categoryable');
     }
+
+    /**
+     * @param $query
+     * @param int $count
+     * @return mixed
+     */
+    public function scopeLastArticles($query, $count = 5)
+    {
+        return $query->orderByDesc('created_at')->limit($count)->get();
+    }
 }

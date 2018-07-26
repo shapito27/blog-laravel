@@ -1,5 +1,5 @@
 <label for="">Наименование</label>
-<input type="text" class="form-control" name="title" placeholder="Name of category" value="{{$article->title or ""}}" required>
+<input type="text" class="form-control" name="title" placeholder="Name of article" value="{{$article->title or ""}}" required>
 
 
 <label for="">Slug</label>

@@ -20,8 +20,31 @@ class Category extends Model
             Str::slug(mb_substr($value, 0, 40) . '-' . Carbon::now()->format('dmyHis'), '-');
     }
 
-    //Get childrens
-    public function children(){
+    /**
+     * Get childrens
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function children()
+    {
         return $this->hasMany(self::class, 'parent_id', 'id');
+    }
+
+    /**
+     * Polymorhpic relation with categories
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
+     */
+    public function articles()
+    {
+        return $this->morphedByMany('App\Article', 'categoryable');
+    }
+
+    /**
+     * @param $query
+     * @param int $count
+     * @return mixed
+     */
+    public function scopeLastCategories($query, $count = 5)
+    {
+        return $query->orderByDesc('created_at')->limit($count)->get();
     }
 }
