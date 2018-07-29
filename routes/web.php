@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('blog.home');
 });
+
+Route::get('blog/category/{slug?}', 'BlogController@category')->name('category');
+Route::get('blog/article/{slug?}', 'BlogController@article')->name('article');
 
 Auth::routes();
 

@@ -21,7 +21,7 @@ class Article extends Model
         'image',
         'show_image',
         'meta_title',
-        'meta_sescription',
+        'meta_description',
         'meta_keywords',
         'published',
         'created_by',
