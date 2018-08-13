@@ -42,6 +42,7 @@
                         <div class="dropdown-menu" role="menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('admin.category.index')}}">Категории</a>
                             <a class="dropdown-item" href="{{route('admin.article.index')}}">Материалы</a>
+                            <a class="dropdown-item" href="{{route('admin.user_managment.user.index')}}">Пользователи</a>
                         </div>
                     </li>
                 </ul>
